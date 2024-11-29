@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
+    <!-- Corrected EmailJS library inclusion -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
         // Initialize EmailJS with your public API key
         (function(){
-            emailjs.init("UzvWE4cijC2AeexsY"); // Public API Key from EmailJS
+            emailjs.init({
+                publicKey: "UzvWE4cijC2AeexsY"  // Use your actual public key here
+            });
         })();
-
+    </script>
+    <script>
         $(document).ready(function(){
             $('form').on('submit', function(event) {
                 event.preventDefault(); // Prevent default form submission
@@ -27,7 +31,7 @@
                 };
 
                 // Send email using EmailJS with your template ID and service ID
-                emailjs.send("service_29nyhzq", "template_i3682ek", emailData)  // Using provided service ID and template ID
+                emailjs.send("service_29nyhzq", "template_i3682ek", emailData)
                     .then(function(response) {
                         console.log('Success:', response);
                         alert('Email sent successfully!');
