@@ -1,0 +1,26 @@
+footer ul {
+    padding: 0;
+    list-style: none;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+footer ul li {
+    float: left;
+    width: auto;
+    height: auto;
+    display: flex;
+    padding: 10px 30px;
+}
+
+.fork-coin {
+    border: none;
+    background: linear-gradient(to right, green 50%, red 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    transition:all 5s ease;
+}
+/*
+.fork-coin:hover {
+    background-position:left bottom;
+}*/
