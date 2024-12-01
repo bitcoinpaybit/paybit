@@ -8,14 +8,27 @@ body {
 
 /* Header Section */
 .header-section {
-    background-color: #007bff; /* Background color changed to blue */
+    background-color: #007bff; /* Blue background */
     color: white;
-    padding: 30px 0;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    max-width: 100px; /* Smaller logo */
+    margin-top: 20px;
+    display: inline-block;
 }
 
 h1 {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 p {
@@ -23,14 +36,35 @@ p {
     margin-bottom: 20px;
 }
 
-.logo {
-    max-width: 150px;
-    margin: 20px auto;
-    display: block;
-    transition: transform 0.3s ease;
+/* Navigation Section */
+.navbar {
+    background-color: #f8f9fa; /* Light background for navbar */
+    padding: 10px 0;
 }
 
-/* Make the logo responsive */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #007bff; /* Blue color for nav links */
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
     h1 {
         font-size: 26px;
@@ -41,28 +75,10 @@ p {
     }
 
     .logo {
-        max-width: 120px;
+        max-width: 80px; /* Reduce logo size on small screens */
     }
 }
 
-/* Navigation Section */
-nav {
-    background-color: #f8f9fa;
-}
-
-.navbar-nav {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: #007bff;
-    font-size: 16px;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: #0056b3;
-}
 
 
 
