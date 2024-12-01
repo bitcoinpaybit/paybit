@@ -18,85 +18,8 @@ if (!window.emailjs) {
 
 // Function to dynamically inject the form HTML into the page
 function loadForm() {
-    // Form HTML content with inline styles
-    const formHTML = `
-    <style>
-        #form {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        #form h2 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            font-size: 16px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .form-control {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .alert {
-            font-size: 16px;
-            color: white;
-            background-color: #28a745;
-            padding: 10px;
-            margin-top: 20px;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        .alert-error {
-            background-color: #dc3545;
-        }
-    </style>
-
+    // Form HTML content as a string
+    const formHTML = 
     <section id="form" class="mb-5">
         <h2 class="text-center">Get Started with Paybit</h2>
         <form class="p-4 border rounded">
@@ -136,8 +59,7 @@ function loadForm() {
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
-        <div id="formResponse" class="text-center"></div>
-    </section>`;
+    </section>;
 
     // Inject the form HTML into the formContainer div
     document.getElementById('formContainer').innerHTML = formHTML;
@@ -166,10 +88,10 @@ function loadForm() {
         emailjs.send("service_29nyhzq", "template_i3682ek", emailData)
             .then(function(response) {
                 // Show success message
-                document.getElementById('formResponse').innerHTML = '<div class="alert">Email sent successfully!</div>';
+                alert('Email sent successfully!');
             }, function(error) {
                 // Show error message if email sending fails
-                document.getElementById('formResponse').innerHTML = '<div class="alert alert-error">Failed to send email. Please try again.</div>';
+                alert('Failed to send email. Please try again.');
             });
     });
 }
