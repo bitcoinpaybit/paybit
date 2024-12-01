@@ -7,10 +7,11 @@ body {
 }
 
 /* Header Section */
-.header-section {
-    background-color: #007bff; /* Blue background */
-    color: white;
-    padding: 20px 0;
+header {
+    background-color: #ffffff; /* White background for header */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd; /* Light border for separation */
 }
 
 .container {
@@ -21,24 +22,26 @@ body {
 
 /* Logo */
 .logo {
-    max-width: 100px; /* Smaller logo */
-    margin-top: 20px;
+    max-width: 120px; /* Adjusted to be smaller */
+    height: auto;
     display: inline-block;
+    margin-top: 10px;
 }
 
-h1 {
-    font-size: 32px;
+.text-center h1 {
+    font-size: 36px;
+    color: #333;
     margin: 10px 0;
 }
 
-p {
+.text-center p {
     font-size: 18px;
-    margin-bottom: 20px;
+    color: #555;
 }
 
 /* Navigation Section */
 .navbar {
-    background-color: #f8f9fa; /* Light background for navbar */
+    background-color: #007bff; /* Blue background for navbar */
     padding: 10px 0;
 }
 
@@ -51,12 +54,13 @@ p {
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: #007bff; /* Blue color for nav links */
+    color: #ffffff; /* White text for nav links */
     font-size: 16px;
+    padding: 8px 16px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #ffcc00; /* Gold color on hover */
 }
 
 .navbar-nav {
@@ -65,19 +69,28 @@ p {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 26px;
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
     }
 
-    p {
-        font-size: 16px;
+    .navbar-nav .nav-item {
+        margin: 10px 0;
     }
 
     .logo {
-        max-width: 80px; /* Reduce logo size on small screens */
+        max-width: 100px; /* Slightly smaller logo on mobile */
+    }
+
+    .text-center h1 {
+        font-size: 28px;
+    }
+
+    .text-center p {
+        font-size: 16px;
     }
 }
+
 
 
 
