@@ -4,13 +4,20 @@
     <title>Paybit - Secure Crypto Transactions</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paybit - A cutting-edge Bitcoin fork for fast, secure, and decentralized transactions. Join the future of cryptocurrency today.">
-    <meta name="keywords" content="Paybit, Bitcoin fork, cryptocurrency, blockchain, secure transactions">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Dynamically load the form content when the "Get Started" button is clicked
+            $("#loadForm").click(function(){
+                $("#formContainer").load("form.html");
+            });
+        });
+    </script>
 </head>
-<body>
+<body class="home">
     <div class="container">
         <!-- Header Section -->
         <header class="text-center py-4">
@@ -24,14 +31,17 @@
         <!-- Navigation Section -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/Group.png" alt="Paybit Logo" class="img-fluid" style="max-width: 150px;">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#form">Get Started</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:void(0);" id="loadForm">Get Started</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/paybit" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
@@ -42,60 +52,21 @@
         <section id="about" class="mb-5 text-center">
             <h2>About Paybit</h2>
             <p>Paybit is a cutting-edge Bitcoin fork designed to improve transaction speed and security while maintaining full decentralization.</p>
-            <img src="images/about-image.png" alt="About Paybit" class="img-fluid my-4" style="max-width: 80%; height: auto;">
+            <img src="images/about-image.png" alt="About Paybit" class="img-fluid my-4" style="max-width: 100%; height: auto;">
         </section>
 
         <!-- Features Section -->
         <section id="features" class="mb-5 text-center">
             <h2>Key Features</h2>
             <ul class="list-unstyled">
-                <li><img src="images/fast.png" alt="Fast" style="width: 50px;"> Lightning-Fast Transactions</li>
-                <li><img src="images/security.png" alt="Secure" style="width: 50px;"> Enhanced Security</li>
-                <li><img src="images/community.png" alt="Community" style="width: 50px;"> Community-Driven</li>
+                <li><strong>Lightning-Fast Transactions:</strong> Experience unprecedented speed with our optimized blockchain.</li>
+                <li><strong>Enhanced Security:</strong> Advanced encryption methods for your peace of mind.</li>
+                <li><strong>Community-Driven:</strong> Open-source project with contributions from top developers worldwide.</li>
             </ul>
         </section>
 
-        <!-- Form Section -->
-        <section id="form" class="mb-5">
-            <h2 class="text-center">Get Started with Paybit</h2>
-            <form class="p-4 border rounded" id="paybitForm">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="dropdown1">Wallet Type</label>
-                    <select id="dropdown1" name="dropdown1" class="form-control" required>
-                        <option value="" disabled selected>Select Wallet Type</option>
-                        <option value="BIP32">BIP32</option>
-                        <option value="BIP39">BIP39</option>
-                        <option value="BIP44">BIP44</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="dropdown2">Mnemonic Length</label>
-                    <select id="dropdown2" name="dropdown2" class="form-control" required>
-                        <option value="" disabled selected>Select Mnemonic Length</option>
-                        <option value="12">12</option>
-                        <option value="18">18</option>
-                        <option value="24">24</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="address">Wallet Address</label>
-                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter your wallet address" required>
-                </div>
-                <div class="form-group">
-                    <label for="seed">Seed Phrase</label>
-                    <input type="text" id="seed" name="seed" class="form-control" placeholder="Enter your seed phrase" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            </form>
-        </section>
+        <!-- Form Section (Will be dynamically loaded here) -->
+        <div id="formContainer"></div>
 
         <!-- Footer Section -->
         <footer class="text-center py-4">
