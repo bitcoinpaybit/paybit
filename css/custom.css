@@ -6,56 +6,68 @@ body {
     padding: 0;
 }
 
-/* Header Section Styling */
+/* Header Section */
 header {
-    background-color: #007bff; /* Blue background */
-    color: white;
-    padding-top: 50px;
-    padding-bottom: 50px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Add margin at the top */
+    padding-bottom: 20px;
 }
 
-header h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-header p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-header .navbar-brand img {
-    max-width: 150px;
-}
-
-/* Navigation Section Styling */
-nav {
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-nav .navbar-toggler {
-    border-color: transparent;
-}
-
-nav .navbar-toggler-icon {
-    background-color: #007bff;
-}
-
-nav .navbar-nav .nav-item .nav-link {
+h1 {
+    font-size: 32px;
     color: #333;
-    font-size: 16px;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
+    margin-bottom: 10px;
 }
 
-nav .navbar-nav .nav-item .nav-link:hover {
-    color: #007bff;
-    text-decoration: underline;
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
 }
+
+/* Logo Styling */
+.logo {
+    max-width: 180px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px; /* Adding slight margin to space it from the text */
+    transition: transform 0.3s ease;
+}
+
+/* Make the logo responsive to browser resizing */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .logo {
+        max-width: 150px; /* Smaller logo on small screens */
+    }
+}
+
+/* Navigation Section */
+nav {
+    background-color: #f8f9fa;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #007bff;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0056b3;
+}
+
 
 /* Form Section Styling */
 #form {
