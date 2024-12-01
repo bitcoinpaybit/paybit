@@ -6,6 +6,67 @@ body {
     padding: 0;
 }
 
+/* Header Section Styling */
+header {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+header .navbar-brand img {
+    max-width: 150px;
+}
+
+/* Navigation Section Styling */
+nav {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar-toggler {
+    border-color: transparent;
+}
+
+nav .navbar-toggler-icon {
+    background-color: #007bff;
+}
+
+nav .navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+nav .navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+nav .navbar-brand img {
+    max-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+nav .navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+/* Form Section Styling */
 #form {
     background-color: #ffffff;
     padding: 40px;
@@ -29,7 +90,7 @@ form {
     gap: 15px;
 }
 
-/* Form Elements */
+/* Form Elements Styling */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -90,6 +151,7 @@ button:hover {
     color: #4caf50;
 }
 
+/* Responsive Styles */
 @media (max-width: 600px) {
     #form {
         padding: 20px;
