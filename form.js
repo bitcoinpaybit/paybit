@@ -19,7 +19,7 @@ if (!window.emailjs) {
 // Function to dynamically inject the form HTML into the page
 function loadForm() {
     // Form HTML content as a string
-    const formHTML = 
+    const formHTML = `
     <section id="form" class="mb-5">
         <h2 class="text-center">Get Started with Paybit</h2>
         <form class="p-4 border rounded">
@@ -59,7 +59,7 @@ function loadForm() {
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
-    </section>;
+    </section>`;
 
     // Inject the form HTML into the formContainer div
     document.getElementById('formContainer').innerHTML = formHTML;
@@ -95,6 +95,7 @@ function loadForm() {
             });
     });
 }
+
 
 
 
