@@ -8,12 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Load the form content automatically when the page is loaded
-            $("#formContainer").load("form.html");
-        });
-    </script>
+    <!-- Include the JavaScript file that injects the form -->
+    <script src="form.js"></script>
 </head>
 <body class="home">
     <div class="container">
@@ -29,7 +25,6 @@
         <!-- Navigation Section -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <div class="container">
-                <!-- No logo here to avoid duplication -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -60,7 +55,7 @@
             </ul>
         </section>
 
-        <!-- Form Section (Will be automatically loaded here) -->
+        <!-- Form Section (The form will be automatically injected here by form.js) -->
         <div id="formContainer"></div>
 
         <!-- Footer Section -->
@@ -70,3 +65,4 @@
     </div>
 </body>
 </html>
+
